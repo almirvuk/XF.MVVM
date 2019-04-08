@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XF.MVVM.View.AddPersonPage">
+    <ContentPage.Content>
+
+        <StackLayout Padding="10" Spacing="10">
+
+            <Label Text="First Name"/>
+            <Entry Text="{Binding FirstName}" Placeholder="Almir"/>
+
+            <Label Text="Last Name"/>
+            <Entry Text="{Binding LastName}" Placeholder="Vuk"/>
+
+            <Label Text="Website"/>
+            <Entry Text="{Binding Website}" Placeholder="Your Website"/>
+
+            <StackLayout Orientation="Horizontal" Spacing="10">
+                <Label Text="Favourite?"/>
+                <Switch IsToggled="{Binding IsFavourite}"/>
+            </StackLayout>
+
+            <Label Text="{Binding Message}"/>
+
+            <Button Text="Open Website" Command="{Binding OpenWebsiteCommand}"/>
+            <Button Text="Save Contact" Command="{Binding SaveContactCommand}"/>
+
+            <ActivityIndicator IsRunning="{Binding IsBusy}"/>
+
+        </StackLayout>
+        
+    </ContentPage.Content>
+</ContentPage>
